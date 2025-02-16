@@ -18,11 +18,11 @@ from django.contrib import admin
 from django.urls import path,include
 from django.views.generic.base import RedirectView
 from django.shortcuts import redirect
-from itinerary import views  # Make sure to import your views
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include('itinerary.urls')), # include the url of the app urls 
+     path('admin/', admin.site.urls),
+    path('itinerary/', include('itinerary.urls')),
+    path('', lambda request: redirect('create_travel_plan')),  # Redirect root URL to the create page
 
 ]

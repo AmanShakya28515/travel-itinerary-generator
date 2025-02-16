@@ -1,0 +1,9 @@
+
+  <div class="container">
+    <h2>Create Your Travel Plan</h2>
+    <form method="POST">
+      {% csrf_token %}
+      {{ form.as_p }}  <!-- This renders the form fields automatically -->
+      <button type="submit" class="btn btn-primary">Generate Itinerary</button>
+    </form>
+  </div>
